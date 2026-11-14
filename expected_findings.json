@@ -1,0 +1,56 @@
+[
+  {
+    "id": "F01",
+    "file": "backend/app.py",
+    "line": 46,
+    "type": "SQL Injection",
+    "severity": "Critical",
+    "cwe": "CWE-89",
+    "description": "Search term concatenated into the SQL string; exploitable via /api/tasks?search=."
+  },
+  {
+    "id": "F02",
+    "file": "backend/app.py",
+    "line": 9,
+    "type": "Hardcoded Secret",
+    "severity": "High",
+    "cwe": "CWE-798",
+    "description": "Admin token hardcoded in source and guards the destructive 'clear all' endpoint."
+  },
+  {
+    "id": "F03",
+    "file": "backend/app.py",
+    "line": 97,
+    "type": "Division By Zero (Bug)",
+    "severity": "Medium",
+    "cwe": "CWE-369",
+    "description": "With no tasks, /api/stats raises ZeroDivisionError and returns HTTP 500."
+  },
+  {
+    "id": "F04",
+    "file": "backend/app.py",
+    "line": 103,
+    "type": "Security Misconfiguration",
+    "severity": "High",
+    "cwe": "CWE-489",
+    "description": "Werkzeug debugger enabled while listening on 0.0.0.0 (remote code execution risk)."
+  },
+  {
+    "id": "F05",
+    "file": "frontend/app.js",
+    "line": 23,
+    "type": "Stored XSS",
+    "severity": "High",
+    "cwe": "CWE-79",
+    "description": "Task title inserted via innerHTML without escaping; persists in the DB and runs for every visitor."
+  },
+  {
+    "id": "F06",
+    "file": "frontend/app.js",
+    "line": 72,
+    "type": "Sensitive Data In localStorage",
+    "severity": "Medium",
+    "cwe": "CWE-922",
+    "description": "Admin token persisted in localStorage, readable by any script (e.g. via the XSS above)."
+  }
+]

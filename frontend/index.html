@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Task Manager</h1>
+    <p id="stats" class="muted">Loading stats…</p>
+
+    <div class="row">
+      <input id="new-title" type="text" placeholder="New task…" maxlength="200">
+      <button id="add-btn">Add</button>
+    </div>
+
+    <div class="row">
+      <input id="search" type="search" placeholder="Search tasks…">
+    </div>
+
+    <ul id="task-list"></ul>
+
+    <button id="clear-btn" class="danger">Clear all (admin)</button>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
